@@ -71,3 +71,25 @@ for conta in sorted(contas):
 
 for conta in sorted(contas, reverse=True):
     print(conta)
+
+
+conta_gui = ContaSalario(1233)
+conta_gui.deposito(100)
+
+conta_dani = ContaSalario(54242)
+conta_dani.deposito(100)
+
+conta_paulo = ContaSalario(33123)
+conta_paulo.deposito(100)
+
+contas = [conta_gui, conta_dani, conta_paulo]
+for conta in sorted(contas, key=attrgetter("saldo", "codigo")):
+    print(conta)
+
+for conta in sorted(contas):
+    print(conta)
+
+print(conta_gui <= conta_dani)
+print(conta_gui <= conta_paulo)
+print(conta_gui < conta_gui)
+print(conta_gui <= conta_gui)
