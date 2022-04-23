@@ -9,8 +9,6 @@ def jogar_forca():
 
     palavra_secreta = unidecode(string_velha)
 
-    print(palavra_secreta)
-
     enforcou = False
     acertou = False
     erros = 0
