@@ -1,24 +1,31 @@
 from random import randint
+from unidecode import unidecode
 
 
 def jogar_forca():
     mensagem()
 
-    palavra_secreta = gera_palavra()
+    string_velha = gera_palavra()
+
+    palavra_secreta = unidecode(string_velha)
+
+    print(palavra_secreta)
 
     enforcou = False
     acertou = False
     erros = 0
+    letras_chutadas = []
 
     resposta = palavra_array(palavra_secreta)
 
     desenha_forca(erros)
-    print(f"{erros} erros de 6")
+    print(f"{erros} erros de 7")
     print(formata_texto(resposta))
 
     while(not enforcou and not acertou):
 
         chute = input("\n\nQual letra? ").upper().strip()
+        letras_chutadas.append(chute)
 
         index = 0
 
@@ -31,7 +38,8 @@ def jogar_forca():
             erros += 1
 
         desenha_forca(erros)
-        print(f"{erros} erros de 7")
+        print(f"{erros} erros de 7\n")
+        print(f"Letras utilizadas: {letras_chutadas}\n\n")
         print(formata_texto(resposta))
         enforcou = erros == 7
         acertou = "_" not in resposta
