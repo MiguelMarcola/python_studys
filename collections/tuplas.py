@@ -66,3 +66,18 @@ print(contas[0], contas[1], contas[2])
 guilherme = ("Guilherme", 37, 1981)  # Tupla
 dani = ("Daniela", 24, 1998)  # Tupla
 # paulo = (39, "Paulo", 1979) # ruim
+
+
+usuarios = [guilherme, dani]
+
+usuarios.append(("Paulo", 39, 1987))
+print(usuarios)
+
+contas = (conta_gui, conta_dani)
+for conta in contas:
+    print(conta)
+
+# contas.append("qlq coisa") # Erro elemento imutável
+
+contas[0].deposita(1000)
+print(contas[0])
