@@ -57,3 +57,36 @@ def proximo_ano(idade):
 
 
 print([proximo_ano(idade) for idade in idades if idade > 21])
+
+
+def faz_processamento_de_visuaizacao(lista):
+    print(len(lista))
+    lista.append(13)
+
+
+idades = [16, 20, 27, 30, 40, 45]
+faz_processamento_de_visuaizacao(idades)
+print(idades)
+
+
+def faz_processamento_de_visuaizacao(lista=[]):
+    print(len(lista))
+    lista.append(13)
+
+
+faz_processamento_de_visuaizacao()
+faz_processamento_de_visuaizacao()
+faz_processamento_de_visuaizacao()
+faz_processamento_de_visuaizacao()
+
+
+def faz_processamento_de_visuaizacao(lista=None):
+    if lista == None:
+        lista = list()
+    print(len(lista))
+    lista.append(13)
+
+
+faz_processamento_de_visuaizacao()
+faz_processamento_de_visuaizacao()
+faz_processamento_de_visuaizacao()
