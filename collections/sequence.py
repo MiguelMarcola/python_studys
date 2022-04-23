@@ -22,3 +22,11 @@ for nome, idade, nacsimento in usuarios:
 
 for nome, _, _ in usuarios:
     print(nome)
+
+
+print(sorted(idades))
+print(list(reversed(idades)))
+print(sorted(idades, reverse=True))
+
+idades.sort()
+print(idades)
