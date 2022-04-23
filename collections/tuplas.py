@@ -42,3 +42,27 @@ print(contas[2])
 
 contas[2].deposita(300)
 print(conta_gui)
+
+
+def deposita_para_todas(contas):
+    for conta in contas:
+        conta.deposita(100)
+
+
+contas = [conta_gui, conta_dani]
+deposita_para_todas(contas)
+for conta in contas:
+    print(conta)
+
+
+contas.insert(0, 76)
+print(contas[0], contas[1], contas[2])
+
+
+# deposita_para_todas(contas)
+# print(contas[0], contas[1], contas[2])
+# Error for int in position 0
+
+guilherme = ("Guilherme", 37, 1981)  # Tupla
+dani = ("Daniela", 24, 1998)  # Tupla
+# paulo = (39, "Paulo", 1979) # ruim
