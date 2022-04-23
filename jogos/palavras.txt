@@ -1,1 +1,8 @@
-Xícara
+gato
+cachorro
+cobra
+lagarto
+jacare
+tubarao
+macaco
+xipamze
