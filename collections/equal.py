@@ -14,6 +14,9 @@ class ContaSalario:
             return False
         return self.codigo == outro.codigo and self.saldo == outro.saldo
 
+    def __lt__(self, outro):
+        return self.saldo < outro.saldo
+
 
 conta1 = ContaSalario(37)
 conta1.deposito(100)

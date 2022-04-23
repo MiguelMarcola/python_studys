@@ -60,3 +60,14 @@ for conta in sorted(contas, key=extrai_saldo):
 
 for conta in sorted(contas, key=attrgetter("saldo")):
     print(conta)
+
+
+print(conta_gui > conta_dani)
+print(conta_gui < conta_dani)
+
+for conta in sorted(contas):
+    print(conta)
+
+
+for conta in sorted(contas, reverse=True):
+    print(conta)
