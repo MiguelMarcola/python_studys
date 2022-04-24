@@ -1,4 +1,5 @@
 from cgi import test
+from collections import defaultdict
 
 
 aparicoes = {
@@ -51,3 +52,24 @@ for chave, valor in aparicoes.items():
 
 teste = [f"palavra {chave}" for chave in aparicoes.keys()]
 print(teste)
+
+
+meu_texto = "Bem vindo meu nome é guilherme eu gosto muito de nomes e tenho o meu cachorro e gosto muito de cachorro"
+meu_texto = meu_texto.lower()
+
+aparicoes = {}
+
+for palavra in meu_texto.split():
+    ate_agora = aparicoes.get(palavra, 0)
+    aparicoes[palavra] = ate_agora + 1
+
+print(aparicoes)
+
+
+aparicoes = defaultdict(int)
+
+for palavra in meu_texto.split():
+    ate_agora = aparicoes[palavra]
+    aparicoes[palavra] = ate_agora + 1
+
+print(aparicoes)
