@@ -28,3 +28,13 @@ for usuario in set(assistiram):
 
 
 print(usuarios_machine_learnig | usarios_data_science)
+
+
+print(usuarios_machine_learnig & usarios_data_science)
+
+
+print(usuarios_machine_learnig - usarios_data_science)
+print(usarios_data_science - usuarios_machine_learnig)
+
+
+print(usarios_data_science ^ usuarios_machine_learnig)
