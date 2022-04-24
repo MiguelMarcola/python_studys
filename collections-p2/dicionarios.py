@@ -1,5 +1,6 @@
 from cgi import test
 from collections import defaultdict
+from typing import Counter
 
 
 aparicoes = {
@@ -57,19 +58,39 @@ print(teste)
 meu_texto = "Bem vindo meu nome é guilherme eu gosto muito de nomes e tenho o meu cachorro e gosto muito de cachorro"
 meu_texto = meu_texto.lower()
 
-aparicoes = {}
+# aparicoes = {}
 
-for palavra in meu_texto.split():
-    ate_agora = aparicoes.get(palavra, 0)
-    aparicoes[palavra] = ate_agora + 1
+# for palavra in meu_texto.split():
+#     ate_agora = aparicoes.get(palavra, 0)
+#     aparicoes[palavra] = ate_agora + 1
 
-print(aparicoes)
+# print(aparicoes)
+
+
+# aparicoes = defaultdict(int)
+
+# for palavra in meu_texto.split():
+#     ate_agora = aparicoes[palavra]
+#     aparicoes[palavra] = ate_agora + 1
+
+# print(aparicoes)
 
 
 aparicoes = defaultdict(int)
 
 for palavra in meu_texto.split():
-    ate_agora = aparicoes[palavra]
-    aparicoes[palavra] = ate_agora + 1
+    aparicoes[palavra] += 1
 
+print(aparicoes)
+
+
+class Conta:
+    def __init__(self):
+        print("Imprimindo uma conta")
+
+
+contas = defaultdict(Conta)
+contas[15]
+
+aparicoes = Counter(meu_texto.split())
 print(aparicoes)
