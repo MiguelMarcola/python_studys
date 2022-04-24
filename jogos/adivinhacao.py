@@ -8,7 +8,6 @@ def jogar_adivinhacao():
     print("*********************************")
 
     tentativas = 0
-    numero_secreto = randint(0, 200)
     pontos = 100
 
     while(tentativas == 0):
@@ -18,25 +17,32 @@ def jogar_adivinhacao():
         nivel = int(input("Defina o nível: "))
 
         if(nivel == 1):
-            tentativas = 20
-            pontos_perdidos = 5
-        elif(nivel == 2):
             tentativas = 10
+            max_num = 100
+            pontos_perdidos = 10
+        elif(nivel == 2):
+            tentativas = 16
+            max_num = 500
+            pontos_perdidos = 6.25
             pontos_perdidos = 10
         elif(nivel == 3):
-            tentativas = 5
-            pontos_perdidos = 20
+            tentativas = 25
+            pontos_perdidos = 4
+            max_num = 1000
         else:
             print("Valor inválido!\n")
 
+        numero_secreto = randint(0, max_num)
+
     for rodada in range(1, tentativas + 1):
-        chute = input("Digite o seu número: ")
-        chute = int(chute)
         print(f"Tentativa {rodada} de {tentativas}")
+        chute = input(f"(0 a {max_num})\nDigite o seu número: ")
+        chute = int(chute)
+
         print("Você digitou: ", chute)
 
-        if(chute < 0 or chute > 200):
-            print("Você deve digitar um número entre 0 e 200!\n\n")
+        if(chute < 0 or chute > max_num):
+            print(f"Você deve digitar um número entre 0 e {max_num}!\n\n")
             continue
 
         acertou = chute == numero_secreto
@@ -53,10 +59,14 @@ def jogar_adivinhacao():
                 print("Digite um valor menor!\n")
             elif(menor):
                 print("Digite um valor maior!\n")
+    if(acertou):
+        print(f"Fim do jogo! Você fez {pontos} pontos")
 
-    print(f"Fim do jogo! Você fez {pontos} pontos")
+        forca.imprime_mensagem_vencedor()
+    else:
+        print(f"Fim do jogo! Você fez {pontos} pontos")
 
-    forca.imprime_mensagem_vencedor()
+        forca.imprime_mensagem_perdedor()
 
 
 if(__name__ == "__main__"):
