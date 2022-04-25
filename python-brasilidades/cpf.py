@@ -1,3 +1,6 @@
+from validate_docbr import CPF
+
+
 class Cpf:
     def __init__(self, document):
         documento = str(document)
@@ -8,14 +11,14 @@ class Cpf:
 
     def cpf_validator(self, document):
         if(len(document) == 11):
-            return True
+            validator_cpf = CPF()
+            return validator_cpf.validate(document)
         else:
             return False
 
     def format_cpf(self):
-        format_cpf = self.cpf[:3] + "." + self.cpf[3:6] + \
-            "." + self.cpf[6:9] + "-" + self.cpf[9:]
-        return format_cpf
+        format_cpf = CPF()
+        return format_cpf.mask(self.cpf)
 
     def __str__(self) -> str:
         return self.format_cpf()
