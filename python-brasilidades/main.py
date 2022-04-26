@@ -1,6 +1,5 @@
-import re
+from telephones import Tel
 
-padrao = "\w@\w.\w"
-texto = "grewgf ateste@email.com dasdasasd@dasd.1dasd dasdw dadwf"
-resposta = re.search(padrao, texto)
-print(resposta.group)
+telefone = "24999020698"
+
+telefone_objeto = Tel(telefone)
