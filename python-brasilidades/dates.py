@@ -1,5 +1,4 @@
-from calendar import month
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class Dates:
@@ -22,5 +21,10 @@ class Dates:
         day_of_week = days[self.created_at.weekday()]
         return day_of_week
 
+    def registration_time(self):
+        registration_time = (datetime.today() +
+                             timedelta(days=30, hours=19, minutes=23, seconds=23)) - self.created_at
+        return registration_time
+
     def __str__(self):
-        return f"{self.format_date()}"
+        return f"{self.format_date()} - {self.registration_time()}"
