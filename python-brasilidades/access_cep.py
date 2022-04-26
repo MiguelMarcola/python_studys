@@ -9,6 +9,7 @@ class SearchAddress:
             self.cep = cep
         else:
             raise ValueError("Invalid CEP!")
+        self.bairro, self.cidade, self.uf = self.request_api()
 
     def validator_cep(self, cep):
         if len(cep) != 8:
@@ -25,8 +26,15 @@ class SearchAddress:
 
     def request_api(self):
         request = requests.get(f"https://viacep.com.br/ws/{self.cep}/json")
-        response = request.text
-        print(response)
+        response = request.json()
+        if response.get("erro", 0):
+            raise ValueError("Cep inválido")
+        else:
+            return (
+                response["bairro"],
+                response["localidade"],
+                response["uf"]
+            )
 
     def __str__(self) -> str:
-        return f"{self.mask_cpf()}"
+        return f"{self.mask_cpf()}, {self.bairro}, {self.cidade}-{self.uf}"
