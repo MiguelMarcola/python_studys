@@ -37,4 +37,4 @@ class SearchAddress:
             )
 
     def __str__(self) -> str:
-        return f"{self.mask_cpf()}, {self.bairro}, {self.cidade}-{self.uf}"
+        return f"Address -> {self.mask_cpf()}, {self.bairro}, {self.cidade}-{self.uf}"

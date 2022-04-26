@@ -27,4 +27,4 @@ class Dates:
         return registration_time
 
     def __str__(self):
-        return f"{self.format_date()} - {self.registration_time()}"
+        return f"Created at -> {self.format_date()}"
