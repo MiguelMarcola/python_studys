@@ -1,4 +1,5 @@
-from dates import Dates
+from access_cep import SearchAddress
 
-cadastro = Dates()
-print(cadastro)
+address = SearchAddress("123123122")
+
+print(address)
