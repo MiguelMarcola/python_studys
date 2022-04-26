@@ -1,5 +1,4 @@
-from datetime import datetime
 from dates import Dates
 
-date = Dates()
-print(date)
+cadastro = Dates()
+print(cadastro)
