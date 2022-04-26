@@ -1,7 +1,5 @@
-from telephones import Tel
+from datetime import datetime
+from dates import Dates
 
-telefone = "24999020698"
-
-telefone_objeto = Tel(telefone)
-
-print(telefone_objeto)
+date = Dates()
+print(date)
